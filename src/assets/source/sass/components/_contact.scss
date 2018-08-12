@@ -1,0 +1,42 @@
+.contact-banner {
+    width: 100%;
+    padding: 160px 0;
+    background: url(/assets/img/contact-bg.jpg) left top no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    @include smdevice {
+        padding: 40px 0; 
+    }
+    h1 {
+        color: #d4e9ff;
+        text-transform: uppercase;
+        font-style: italic;
+        text-align: center;
+        margin: 30px 0;
+        @include smdevice {
+            font-size: 24px;
+        }
+    }
+    button {
+        width: 30%;
+        margin: 20px auto;
+        display: block;
+        text-transform: uppercase;
+        background: $secondary-color;
+        border-color: $secondary-color;
+        @include border-radius(0);
+        &:hover,
+        &:focus {
+            background: darken($secondary-color, 15%);
+            border-color: darken($secondary-color, 15%);
+        }
+        @include smdevice {
+            width: 60%;
+        }
+    }
+    textarea {
+        @include smdevice {
+            margin: 15px 0 0 0;
+        }
+    }
+}

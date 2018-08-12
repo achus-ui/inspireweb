@@ -1,0 +1,152 @@
+app-about {
+    .about-banner {
+        width: 100%;
+        height: 550px;
+        background: url(/assets/img/about-bg.jpg) center center no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        @extend %disFlex;
+        align-items: flex-end;
+        justify-content: center;
+        .vission-mission {
+            @extend %disFlex;
+            flex-direction: column;
+            color: $agent-color-1;
+            img {
+                @include smdevice {
+                    width: 180px;
+                    display: block;
+                    margin: 5px auto;
+                }
+            }
+            p {
+                @include smdevice {
+                    font-size: fontSize(-4px);
+                }
+            }
+            .vission {
+                @extend %disFlex;
+                flex-direction: row-reverse;
+            }
+            .mission {
+                @extend %disFlex;
+            }
+            h3 {
+                margin: 30px 0 0;
+                @include smdevice {
+                    margin: 0;
+                }
+            }
+            .mission {
+                text-align: right;
+            }
+        }
+    }
+    .directors-mesg {
+        padding: 30px 0;
+        h1 {
+            font-size: fontSize(20px);
+            text-align: center;
+            font-weight: fontWeight(100);
+            background: -webkit-linear-gradient(#82af40, #e9673a, #1d60ec);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            @include smdevice {
+                font-size: fontSize(8px);
+            }
+        }
+        img {
+            width: 250px;
+            height: 250px;
+            @include border-radius(50%);
+            border: 4px solid #ec1a64;
+            @include smdevice {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        h2 {
+            // color: $agent-color-1;
+            font-size: fontSize(22px);
+            margin-top: 10px;
+            @include smdevice {
+                font-size: fontSize(12px);
+            }
+        }
+        h3 {
+            // color: $agent-color-1;
+            font-size: fontSize(4px);
+            font-style: italic;
+        }
+        p {
+            // color: $agent-color-1;
+            font-size: fontSize(-2px);
+        }
+    }
+    .testimonials-wrapper {
+        padding: 50px 0;
+        background: url(/assets/img/testimonial-bg.jpg) left top no-repeat #f8f9fa;
+        background-size: cover;
+        @include smdevice {
+            padding: 0;
+        }
+        h2 {
+            color: $agent-color-1;
+            font-size: fontSize(20px);
+            text-align: center;
+            font-weight: fontWeight(100); // background: -webkit-linear-gradient(#82af40, #e9673a, #1d60ec);
+            // -webkit-background-clip: text;
+            // background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            margin: 0 0 40px;
+            text-transform: uppercase;
+            @include smdevice {
+                font-size: fontSize(12px);
+                margin-bottom: 90px;
+            }
+        }
+        ul.testimonials {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            @extend %disFlex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            li {
+                flex-basis: 45%;
+                margin-bottom: 90px;
+                padding: 55px 15px 15px 15px;
+                position: relative;
+                img {
+                    width: 120px;
+                    height: 120px;
+                    @include border-radius(100%);
+                    border: 3px solid #EC1A64;
+                    @include positioning(absolute, $top: -60px, $left: 50%);
+                    transform: translate3d(-50%, 0, 0);
+                    z-index: 9;
+                }
+                .info {
+                    color: $agent-color-1;
+                    padding: 10px;
+                    position: relative;
+                }
+                h3 {
+                    font-size: fontSize(8px);
+                    text-align: right;
+                }
+                h4 {
+                    font-size: fontSize(-2px);
+                    font-weight: fontWeight(300);
+                    text-align: right;
+                }
+                p {
+                    margin: 0;
+                    font-size: fontSize(-2px);
+                }
+            }
+        }
+    }
+}

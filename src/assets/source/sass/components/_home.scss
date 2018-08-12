@@ -1,0 +1,155 @@
+app-home {
+    .slider {
+        position: relative;
+        margin-top: 34px;
+        @include smdevice {
+            margin-top: 0;
+        }
+        .owl-carousel .owl-item img {
+            @include smdevice {
+                height: 250px;
+            }
+        }
+        .tagline-contact-form {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 99999;
+            @include smdevice {
+                padding: 15px;
+            }
+            .wrapper {
+                height: 100%;
+                @extend %disFlex;
+                justify-content: space-between;
+                align-items: flex-end;
+                .tag-line {
+                    flex-basis: 65%;
+                    height: 100%;
+                    color: $agent-color-1;
+                    justify-content: space-evenly;
+                    align-items: flex-end;
+                    flex-direction: column;
+                    @extend %disFlex;
+                    h1 {
+                        text-transform: uppercase;
+                        font-weight: fontWeight(300);
+                        font-size: fontSize(20px);
+                        span {
+                            color: #E9673A;
+                        }
+                        @include smdevice {
+                            margin-top: 18%;
+                            font-size: fontSize(10px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .testimonials {
+        padding: 100px 0;
+        background: url(/assets/img/oil-gas.jpg) left top no-repeat #f9f9ff;
+        background-size: cover;
+        h2 {
+            text-transform: capitalize;
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4063a7;
+            border-top: 2px solid #438fa6;
+            padding: 10px 0;
+            background: -webkit-linear-gradient(#82af40, #e9673a, #1d60ec);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            @extend %disFlex;
+            justify-content: center;
+            align-items: center;
+            span {
+                width: 50px;
+                height: 50px;
+                background: #eb1a64;
+                @include border-radius(100%);
+                display: inline-block;
+                color: $agent-color-1;
+                line-height: 50px;
+                font-size: 22px;
+                margin-right: 10px;
+                -webkit-text-fill-color: antiquewhite;
+            }
+        }
+        .testimonial-slider {
+            h3 {
+                color: $secondary-color;
+                font-weight: fontWeight(300);
+                text-align: center;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+            h4 {
+                font-weight: fontWeight(300);
+                font-size: fontSize(-2px);
+                text-transform: capitalize;
+            }
+            p {
+                color: #fff;
+                font-size: fontSize(-2px);
+            }
+        }
+    }
+}
+
+.contact-form {
+    width: 100%;
+    background: url(/assets/img/contact-form-bg.jpg) left top no-repeat;
+    background-size: cover;
+    @extend %disFlex;
+    justify-content: space-between;
+    align-items: center;
+    .holder {
+        @extend %disFlex;
+        justify-content: space-between;
+        align-items: center;
+        .tag-content {
+            flex-basis: 60%;
+            color: #fff;
+            h3 {
+                font-size: fontSize(12px);
+                margin: 25px 0;
+                text-transform: capitalize;
+                font-weight: fontWeight(300);
+            }
+        }
+        .form-wrapper {
+            flex-basis: 30%;
+            height: 100%;
+            padding: 40px 25px;
+            background: rgba(0, 0, 0, 0.5);
+            h3 {
+                color: $agent-color-1;
+                font-size: fontSize(3px);
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: fontWeight(0);
+                margin-bottom: 20px;
+            }
+            input,
+            textarea {
+                font-size: fontSize(-2px);
+            }
+            button {
+                width: 100%;
+                text-transform: uppercase;
+                background: $secondary-color;
+                border-color: $secondary-color;
+                @include border-radius(0);
+                &:hover,
+                &:focus {
+                    background: darken($secondary-color, 15%);
+                    border-color: darken($secondary-color, 15%);
+                }
+            }
+        }
+    }
+}

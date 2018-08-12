@@ -1,0 +1,140 @@
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    @include positioning(absolute, $top: 0);
+    @include transitions(all, 0.3s, ease-in-out);
+    z-index: 999999;
+    @include smdevice {
+        position: static;
+        background: $primary-color;
+        ;
+    }
+    &.sticky-header {
+        @include positioning(fixed, $top: 0);
+        z-index: 999999;
+        @include transitions(all, 0.3s, ease-in-out);
+        background: rgba(0, 0, 0, 0.85);
+        .header-sec {
+            @include scale(1, 0, 1);
+            @include transitions(all, 0.3s, ease-in-out);
+            height: 0;
+            transform-origin: top;
+        }
+        .menus {
+            .logo {
+                width: 200px;
+                @include transitions(all, 0.3s, ease-in-out);
+                @include smdevice {
+                    width: 220px;
+                }
+            }
+        }
+    }
+    .header-sec {
+        width: 100%;
+        height: auto;
+        padding: 5px 0;
+        background: $primary-color;
+        @include scale(1, 1, 1);
+        @include transitions(all, 0.3s, ease-in-out);
+        .social-info-mobile {
+            @extend %disFlex;
+            justify-content: space-between;
+            align-items: center;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    font-size: fontSize(-2px);
+                    color: $agent-color-1;
+                    margin-right: 15px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    a {
+                        color: $agent-color-1;
+                    }
+                }
+            }
+        }
+    }
+    .menus {
+        @extend %disFlex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            width: 300px;
+            cursor: pointer;
+            @include transitions(all, 0.3s, ease-in-out);
+            @include smdevice {
+                width: 200px;
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            @extend %disFlex;
+            @include smdevice {
+                transform: scale3d(0, 1, 1);
+                transition: all 0.3s ease-in-out;
+                transform-origin: right;
+                position: fixed;
+            }
+            &.show-menu-mobile {
+                transform: scale3d(1, 1, 1);
+                transition: all 0.3s ease-in-out;
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                z-index: 999999;
+                top: 0;
+                background: rgba(0, 0, 0, 0.9);
+                left: 0;
+                padding: 15px;
+                li {
+                    padding: 15px 0;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+            li {
+                margin-right: 25px;
+                text-transform: uppercase;
+                font-size: fontSize(0px);
+                font-weight: fontWeight(0);
+                color: $agent-color-1;
+                cursor: pointer;
+                position: relative;
+                &:before {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background: #b52159;
+                    @include positioning(absolute, $bottom: 0);
+                    transform-origin: center;
+                    @include scale(0, 1, 1);
+                    @include transitions(all, 0.3s, ease-in-out);
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                &:hover {
+                    &:before {
+                        @include scale(1, 1, 1);
+                        @include transitions(all, 0.3s, ease-in-out);
+                    }
+                }
+                &.active {
+                    &:before {
+                        @include scale(1, 1, 1);
+                        @include transitions(all, 0.3s, ease-in-out);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,206 @@
+@import "base/colors";
+@import "base/typography";
+@import "helpers/mixins";
+@import "helpers/checkbox";
+@import "helpers/radio";
+@import "components/header";
+@import "components/home";
+@import "components/about";
+@import "components/contact";
+@import "components/placement";
+* {
+    outline: none; // border: 1px solid;
+}
+
+input,
+textarea,
+select,
+a {
+    &:focus,
+    &:hover,
+    &:active {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.form-group {
+    &.required {
+        position: relative;
+        input {
+            padding-right: 25px !important;
+        }
+        &:after {
+            content: "*";
+            color: red;
+            @include positioning(absolute, $top: 5px, $right: 10px);
+        }
+    }
+}
+
+select {
+    text-transform: capitalize;
+}
+
+input {
+    text-transform: capitalize;
+    &[type="email"] {
+        text-transform: none;
+    }
+    &+span {
+        color: red !important;
+        font-size: fontSize(-4px);
+    }
+}
+
+input.ng-invalid {
+    border-color: red !important;
+    &.ng-untouched {
+        border-color: #d5d5d5 !important;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+.modal-header {
+    button.close {
+        span {
+            cursor: pointer;
+        }
+    }
+}
+
+body {
+    margin: auto;
+    padding: 0 !important;
+    font-weight: fontWeight(0);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.map {
+    height: 350px;
+}
+
+footer {
+    background: $primary-color;
+    text-align: center;
+    color: $secondary-color;
+    padding: 10px 20px;
+    p {
+        margin: 0;
+        text-transform: capitalize;
+    }
+}
+
+.hamburger-icon {
+    width: 60px;
+    height: 45px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 99999999;
+    display: none;
+    @include smdevice {
+        display: block;
+    }
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 7px;
+    width: 50%;
+    background: $teritiary-color;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.hamburger-icon span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+}
+
+.hamburger-icon span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+}
+
+.hamburger-icon span:nth-child(1),
+.hamburger-icon span:nth-child(2) {
+    top: 0px;
+}
+
+.hamburger-icon span:nth-child(3),
+.hamburger-icon span:nth-child(4) {
+    top: 18px;
+}
+
+.hamburger-icon span:nth-child(5),
+.hamburger-icon span:nth-child(6) {
+    top: 36px;
+}
+
+.hamburger-icon.open span:nth-child(1),
+.hamburger-icon.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.hamburger-icon.open span:nth-child(2),
+.hamburger-icon.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(5) {
+    left: 5px;
+    top: 29px;
+}
+
+.hamburger-icon.open span:nth-child(6) {
+    left: calc(50% - 5px);
+    top: 29px;
+}

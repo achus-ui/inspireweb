@@ -1,0 +1,126 @@
+<section class="slider">
+  <owl-carousel 
+    [options]="{
+    items: 1, 
+    autoplay: true, 
+    autoplayTimeout: 3000,
+    dots: false, 
+    navigation: true, 
+    loop: true,
+    margin : 0,
+    slideBy: 1,
+    responsive: { '0': { items: 1}, '480': { items: 1 }, '640': { items: 1 } }
+    }" 
+    [carouselClasses]="['owl-theme', 'sliding']">
+    <div class="item">
+      <img src="assets/img/slider-1.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="assets/img/slider-1.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="assets/img/slider-1.jpg" alt="">
+    </div>
+  </owl-carousel>
+  <div class="tagline-contact-form">
+    <div class="wrapper">
+      <div class="tag-line">
+        <h1>“aspire to
+          <span>inspire</span> before
+          <br> you expire”</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" [ngsReveal]="{ reset: false}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+          <h2><span>#1</span> technical institute in kerala</h2>
+          <p>Inspire institute for technical studies has made its opening by providing quality education in job oriented courses in the
+          field of Mechanical ,Civil, Computer Science streams. By the innovative technical program the students can be able to develop their technical skills from the areas that interest you the most. We convey comprehensive education and opening through highly catechized and sophisticated pedagogues. Our epigram is to vitalize students ingenious inherent and make them capable of
+          securing inorative opportunity.</p>
+          <div class="testimonial-slider">
+            <h3>see what our students saying</h3>
+            <owl-carousel [options]="{
+                  items: 2, 
+                  autoplay: true, 
+                  autoplayTimeout: 3000,
+                  dots: true, 
+                  navigation: false, 
+                  loop: true,
+                  margin : 0,
+                  slideBy: 2,
+                  responsive: { '0': { items: 1}, '480': { items: 1 }, '640': { items: 1 }, '1025': { items: 2 } }
+                  }" [carouselClasses]="['owl-theme', 'sliding']">
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+              <div class="item">
+                <h4>Arun Kumar</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos unde dolore, obcaecati amet eveniet laboriosam pariatur,
+                  at minus earum dolorem ea cupiditate hic, ab atque optio commodi sequi quibusdam!</p>
+              </div>
+            </owl-carousel>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <div class="holder">
+          <div class="tag-content">
+            <h3>Get quality courses from inspire!</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, sapiente optio accusamus eveniet labore enim sed.
+              Et, perspiciatis libero vel nostrum dolores eos voluptatem consequatur consequuntur maiores nobis nemo dignissimos.</p>
+          </div>
+          <div class="form-wrapper">
+            <h3>Search for available courses</h3>
+            <form action="https://formspree.io/inspireifts@gmail.com" method="POST">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name" name="Visitor Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Phone Number" name="Visitor Number" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email" name="Visitor Email" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your Query" name="Visitor Query" required></textarea>
+              </div>
+              <button class="btn btn-success" type="submit">submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+<header [ngClass]="{'sticky-header': this.stickyHeader === true}">
+  <div class="header-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+          <div class="social-info-mobile">
+            <ul class="social-info">
+              <li>
+                <i class="fab fa-facebook-f"></i>
+              </li>
+              <li>
+                <i class="fab fa-linkedin-in"></i>
+              </li>
+            </ul>
+            <ul class="mobile">
+              <li>+91 97459252536</li>
+              <li>
+                <a href="mailto:info@inspireifts.com">info@inspireifts.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="menus">
+          <img [routerLink]="['']" src="assets/img/logo.png" alt="logo" class="img-fluid" class="logo">
+          <div class="hamburger-icon" [ngClass]="{'open': showMobMenu}" (click)="showMobMenu = !showMobMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul [ngClass]="{'show-menu-mobile': showMobMenu}">
+            <li 
+              *ngFor="let menu of menus"
+              [ngClass]="{'active': this.location.path() === '/'+menu || this.location.path() === menu }"
+              [routerLink]="[menu]">{{ menu === '' ? 'Home' : menu }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

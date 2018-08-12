@@ -1,0 +1,64 @@
+<section class="about-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="vission-mission">
+          <div class="vission" [ngsReveal]="{ reset: false}">
+            <img src="/assets/img/vission.png" alt="" class="img-fluid">
+            <div class="holder">
+              <h3>Our Vission</h3>
+              <p>To transpire as an idolized center of creativity in engineering technology and to create professionals in the world of competition.
+                To train each disciple to become a value based wizard who would in turn enrich to the melioration of humanity by their
+                enthusiasm and ministration</p>
+            </div>
+          </div>
+          <div class="mission" [ngsReveal]="{ reset: false}">
+            <img src="/assets/img/mission.png" alt="" class="img-fluid">
+            <div class="holder">
+              <h3>Our Mission</h3>
+              <p>To enroot a unique genesis of estimable engineers and techies which would be able to guide and work contemporarily in a charismatic
+                and combative world with an enduring range of view on proficient belief and life crafts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="directors-mesg">
+  <div class="container">
+    <h1 class="text-center">Director's Message</h1>
+    <div class="row">
+      <div class="col-md text-center" *ngFor="let infoItem of directorDetails" [ngsReveal]="{ reset: false}">
+        <img src="{{ infoItem.pic }}" alt="" class="img-fluid" class="director-profile-pic">
+        <h2>{{ infoItem.name }}</h2>
+        <h3>{{ infoItem.role }}</h3>
+        <p>“{{ infoItem.mesg }}”</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="testimonials-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <h2>Testimonials</h2>
+        <div class="row">
+          <div class="col-md" [ngsReveal]="{ reset: false}">
+            <ul class="testimonials">
+              <li *ngFor="let testimonial of testimonials">
+                <!-- <i class="fas fa-quote-left"></i> -->
+                <img src="{{ testimonial.pic }}" alt="" class="img-fluid">
+                <div class="info">
+                  <p>{{ testimonial.mesg }}</p>
+                  <h3>{{ testimonial.name }}</h3>
+                  <h4>{{ testimonial.role }}</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
